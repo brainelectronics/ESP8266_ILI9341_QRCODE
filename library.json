@@ -1,0 +1,20 @@
+{
+  "name": "ESP8266 ILI9341 QRcode",
+  "version": "2.0.0",
+  "keywords": "ili9341, TFT, LCD, SPI, QR Code",
+  "description": "ESP8266 Generate QRCode for ILI9341 SPI TFT LCD 320*240 pixel",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/huangshaun/ESP8266-ILI9341-QRCODE.git"
+  },
+  "authors":
+  [
+    {
+        "name": "Shaun Huang",
+        "email": "ayabreay2@hotmail.com",
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "espressif"
+}
