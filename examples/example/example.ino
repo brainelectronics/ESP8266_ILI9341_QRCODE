@@ -14,12 +14,15 @@
 #include <SPI.h>
 #include <ILI9341_QRCODE.h>
 #include <Adafruit_GFX.h>
-#include <Adafruit_ILI9341.h>
 
+// #include <Adafruit_ILI9341.h>
+#include "TFT_eSPI.h"
+
+// Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
+TFT_eSPI tft = TFT_eSPI();
 #define TFT_DC D1
 #define TFT_CS D2
 
-Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
 ILI9341_QRcode tftqrcode(&tft);
 
 void setup() 
@@ -31,7 +34,13 @@ void setup()
     tft.begin();
     tft.fillScreen(ILI9341_WHITE);
 
-    tftqrcode.QR_Code_create("123456",20,20);
+    // 5 fits maximum to a 240x320 ILI9341
+    tftqrcode.setPixelSize(5);
+
+    // calculate space of centered QR code
+    uint16_t xPosition = (tft.width() - tftqrcode.getQrSize()) / 2;
+    uint16_t yPosition = (tft.height() - tftqrcode.getQrSize()) / 2;
+    tftqrcode.QR_Code_create("https://github.com/brainelectronics", xPosition, yPosition);
 }
 
 void loop() 

@@ -6,13 +6,13 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/huangshaun/ESP8266_ILI9341_QRCODE.git"
+    "url": "https://github.com/brainelectronics/ESP8266_ILI9341_QRCODE.git"
   },
   "authors":
   [
     {
-        "name": "Shaun Huang",
-        "email": "ayabreay2@hotmail.com",
+        "name": "Jonas Scharpf",
+        "email": "info@brainelectronics.de",
     }
   ],
   "frameworks": "arduino",
